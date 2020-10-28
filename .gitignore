@@ -1,0 +1,10 @@
+
+ota-server/
+build/
+
+sdkconfig
+*.defaults
+*.old
+
+logs/
+*.log
