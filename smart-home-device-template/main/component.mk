@@ -5,4 +5,5 @@
 CXXFLAGS += -std=c++14
 CXXFLAGS += -std=c++17
 
+# OTA certs
 COMPONENT_EMBED_TXTFILES :=  ${PROJECT_PATH}/ota_certs/ca_cert_ota.pem
