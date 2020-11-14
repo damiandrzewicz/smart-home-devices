@@ -13,11 +13,9 @@
 #include "esp_https_ota.h"
 #include "esp_http_client.h"
 
-//#include "Network/WifiStation.hpp"
-
-//#include "SmartDevice/Network.hpp"
-
 #include "SmartDevice/Kernel.hpp"
+#include "SmartDevice/DeviceType.hpp"
+
 
 void * operator new( size_t size )
 {
@@ -60,7 +58,8 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
-    SmartDevice::Kernel kernel;
+    auto &kernel = SmartDevice::Kernel::getInstance();
+    kernel.getDeviceInfo().deviceType = SmartDevice::DeviceType::Template;
     kernel.getOtaTask().setBinaryName("test123.bin");
     kernel.start();
 
