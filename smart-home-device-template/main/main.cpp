@@ -59,7 +59,7 @@ void app_main(void)
     ESP_ERROR_CHECK(ret);
 
     auto &kernel = SmartDevice::Kernel::getInstance();
-    kernel.getDeviceInfo().deviceType = SmartDevice::DeviceType::Template;
+    kernel.getDeviceInfo().deviceType = SmartDevice::DeviceType::Type::Template;
     kernel.getOtaTask().setBinaryName("test123.bin");
     kernel.start();
 
