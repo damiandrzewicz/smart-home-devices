@@ -12,6 +12,8 @@ EXTRA_COMPONENT_DIRS += ./../smart-home-device-libs/utils
 EXTRA_COMPONENT_DIRS += ./../smart-home-device-libs/smart-device
 $(info "EXTRA_COMPONENT_DIRS=" $(EXTRA_COMPONENTS_DIRS))
 
+PROJECT_VER := $(shell git describe --always --tags --dirty)
+
 include $(IDF_PATH)/make/project.mk
 
 

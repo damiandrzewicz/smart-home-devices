@@ -13,7 +13,7 @@
 #include "esp_https_ota.h"
 #include "esp_http_client.h"
 
-#include "SmartDevice/Kernel.hpp"
+#include "SmartDevice/DeviceCore.hpp"
 #include "SmartDevice/DeviceType.hpp"
 
 
@@ -58,10 +58,9 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
-    auto &kernel = SmartDevice::Kernel::getInstance();
-    kernel.getDeviceInfo().deviceType = SmartDevice::DeviceType::Type::Template;
-    kernel.getOtaTask().setBinaryName("test123.bin");
-    kernel.start();
+    auto &core = SmartDevice::DeviceCore::getInstance();
+    core.getDeviceInfo().deviceType = SmartDevice::DeviceType::Value::Template;
+    core.start();
 
     //SmartDevice::NetworkTask networkTask;
     //networkTask.start();
